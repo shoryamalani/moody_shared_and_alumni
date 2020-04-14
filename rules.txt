@@ -1,0 +1,6 @@
+Put a folder with your full name in it without spaces
+Don't touch other peoples workspace
+NEVER OVERWRITE
+FIRST GIT PULL THEN GIT PUSH
+if you want to share code using your folder add it to a working directory in your folder
+Finished projects should go in a finished directory
