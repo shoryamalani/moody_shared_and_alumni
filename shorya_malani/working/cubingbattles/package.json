@@ -1,0 +1,21 @@
+{
+  "name": "Cubing_battles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cube-preview": "^0.3.1",
+    "cube-scrambler": "^1.1.0",
+    "express": "^4.17.1",
+    "scramble-generator": "^0.2.2",
+    "scramble-parser": "^0.1.2",
+    "scramble-utils-common": "^0.1.1",
+    "socket.io": "^2.3.0"
+  }
+}

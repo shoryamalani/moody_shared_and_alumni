@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Cubing Battles</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js">
+
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+
+	</script>
+	<script src="script.js">
+
+	</script>
+	<script>
+
+	</script>
+</head>
+<div id="startup">
+	<p>online:<p id="online"></p>
+	</p>
+	<input id="name" value="put your name here"><br><input id=room1 type=button value="3-20 seconds" onclick="join_room(1);"><input id=room2 type=button value="20-30 seconds" onclick="join_room(2);"><input id=room3 type=button value="30-40 seconds" onclick="join_room(3);"><input id=room4 type=button value="40+ seconds" onclick="join_room(4);"></div>
+    <div id="solving" hidden=true>
+      <p id="scramble">Scramble will appear here</p>
+      <h1 id ="solve_timer">0.00</h1>
+      <p id="average">Your Solve Time Average:</p>
+      <table id="other_people">
+            <H3>Other People's Solves</H3>
+            <tr>
+              <th>name</th>
+              <th>Time</th>
+              <th>average</th>
+              
+            </tr>
+          </table>
+          <H3>Your Solves</H3>
+      <table id="old_solves">
+            <tr>
+              <th>Solve Number</th>
+              <th>Time</th>
+            </tr>
+          </table>
+    </div>
+  </body>
+</html>

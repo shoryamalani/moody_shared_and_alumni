@@ -1,0 +1,120 @@
+h1 {
+    text-align: center;
+    font-size: 2em
+}
+
+body {
+    text-align: center;
+    background: rgb(122, 255, 96);
+    padding: 1em;
+    border-style: dotted;
+    font: 2em
+}
+
+.header {
+    padding: 10px;
+    display: inline;
+    float: center;
+}
+
+.do_want_login {
+    float: center
+}
+
+.do_want_login_text {
+    text-align: right;
+}
+
+.weather {
+    padding: 0px;
+    float: right;
+}
+
+.link1 {
+    float: left;
+    padding-bottom: 0px
+}
+
+.link2 {
+    float: right;
+    padding-bottom: 0px
+}
+
+#blog_container {
+    background-color: rgb(66, 121, 177);
+    padding: 2em
+}
+
+.leaderboards_table,
+.leaderboards_row:nth-child() {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+p {
+    font-size: 1.3em;
+}
+
+a:hover {
+    color: green;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+#footer {
+    font-size: 20px;
+}
+
+img {
+    height: 50px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  padding:1em;
+}
+#gameboard_div{
+  height: 770px;
+  width: 770px;
+  padding-bottom:50px;
+}
+td, th {
+  border: 2px solid #000000;
+  text-align: left;
+  height: 70px;
+  width:70px;
+  position: relative;
+  background-color:#F8F8F8;
+  text-align: center
+}
+th{
+  text-align: center;
+  background-color: #dddddd;
+  position: relative;
+
+}
+td:first-child {
+  background-color: #dddddd;
+  text-align: center;
+  font-weight: bold;
+}
+.game_cash{
+
+  right:0;
+  bottom:0;
+  position: absolute;
+  
+}
+#get_game_stuff_div{
+  padding:10px;
+  background-color:rgb(212, 255, 246);
+  position: relative;
+}
