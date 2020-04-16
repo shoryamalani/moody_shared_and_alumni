@@ -11,3 +11,4 @@ Copying is allowed but only snippets of code and it needs to be for anther purpo
 For example you can steal code to make a clock. But you cannot steal a full app.
 Put whatever you want and don't be afraid
 If you need to learn git contact me at hcps-malanis1@henricostudents.org
+Shorya provides good help.
