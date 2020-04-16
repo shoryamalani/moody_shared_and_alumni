@@ -1,0 +1,14 @@
+Playing Cards
+
+Live using socket
+
+Rooms
+
+Login with google
+
+Make backend database of images that the frnot end can pull from
+
+Make multiple games
+
+Make a link that people can go to a certain room
+
