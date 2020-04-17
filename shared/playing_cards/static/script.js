@@ -18,6 +18,10 @@ function send_data() {
     socket.emit('send_data', { "data_sent": input })
 }
 
+function create_game() {
+    game_name = prompt("What is the name of your game", "Blobs_game")
+}
+
 // SOCKET HANDLERS
 socket.on('send_data_back', function(data) {
     document.getElementById("receive").textContent = data["data"]
