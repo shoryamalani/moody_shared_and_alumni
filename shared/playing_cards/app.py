@@ -10,5 +10,7 @@ socketio = SocketIO(app, async_mode=async_mode)
 def index():
     return render_template('index.html', async_mode=socketio.async_mode)
 
+@socket.̨
+
 if __name__ == '__main__':
     socketio.run(app,debug=True)
