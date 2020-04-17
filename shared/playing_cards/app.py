@@ -15,7 +15,7 @@ def index():
 def send_back(data):
     emit("send_data_back",{
         "data":data["data_sent"]
-    })
+    },broadcast=True)
 
 if __name__ == '__main__':
     socketio.run(app,host='0.0.0.0',debug=True)
