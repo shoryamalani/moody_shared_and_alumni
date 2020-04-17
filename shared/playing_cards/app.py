@@ -6,8 +6,8 @@ from flask_socketio import SocketIO,emit,join_room,leave_room
 #APP STUFF
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app, async_mode=async_mode)
 async_mode = None
+socketio = SocketIO(app, async_mode=async_mode)
 
 class user:
     def __init__(self,id):
