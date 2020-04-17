@@ -26,6 +26,7 @@ def send_back(data):
         "data":data["data_sent"]
     },broadcast=True)
 
+
 # This is for if we ever need ids. i accidentally made it not realizing we don't need it and can just use session.
 # @socketio.on('get_id')
 # def get_id():
