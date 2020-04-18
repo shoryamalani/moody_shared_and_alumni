@@ -6,11 +6,11 @@ var client = {
 
 //FUNCTIONS FOR FOR WORKING
 function get_id() {
-    var get_id = window.setInterval(function() {
-        if (!client["id"]) {
-            socket.emit("get_id")
-        }
-    }, 3000)
+    // var get_id = window.setInterval(function() {
+    //     if (!client["id"]) {
+    socket.emit("get_id")
+        //     }
+        // }, 3000)
 }
 
 function send_data() {
