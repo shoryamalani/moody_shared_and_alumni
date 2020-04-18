@@ -28,9 +28,12 @@ socket.on('send_data_back', function(data) {
     document.getElementById("receive").textContent = data["data"]
 })
 
-// socket.on('set_id', function(data) {
-//     client["id"] = data
-// })
+socket.on("get_room", function(data) {
+        document.getElementById("")
+    })
+    // socket.on('set_id', function(data) {
+    //     client["id"] = data
+    // })
 
 function main() {
     //THIS IS WHERE ALL THE CODE WILL GO TO START FUNCTIONS
