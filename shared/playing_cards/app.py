@@ -43,7 +43,7 @@ def create_room(data):
         emit("add_room",{"name":name},broadcast=True)
         rooms["rooms"].append(name)
         rooms[room] = client_room
-        emit("start_game",{"name":name,"id":id})
+        emit("start_game",{"name":name})
         join_room(id)
     else:
         emit("room_taken")
@@ -52,7 +52,6 @@ def make_name(data):
     session["user"].set_name(data["send_data"])
 
 
-# This is for if we ever need ids. i accidentally made it not realizing we don't need it and can just use session.
 @socketio.on('get_id')
 def get_id():
     id = random.randint(10000000,999999999)
