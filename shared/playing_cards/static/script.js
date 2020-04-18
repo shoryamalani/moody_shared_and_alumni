@@ -13,6 +13,10 @@ function get_id() {
         // }, 3000)
 }
 
+function get_rooms() {
+    socket.emit("get_rooms")
+}
+
 function send_data() {
     const input = document.getElementById("testing_inputs").value
     socket.emit('send_data', { "data_sent": input })
@@ -50,9 +54,22 @@ socket.on('set_id', function(data) {
 socket.on('room_taken', function() {
     alert("That room name is taken")
 })
+socket.on('get_rooms', function(data) {
+    room_div = document.getElementById("rooms_div")
+    for (var x = 0; x >= data["rooms"].length; x++) {
+        button = document.createElement("button")
+        button.textContent = data["rooms"][x]
+        button.setAttribute("class", "pure-button")
+        button.setAttribute("onclick", "join_room('" + data["rooms"][x] + "')")
+        room_div.appendChild(document.createElement("BR"))
+        room_div.appendChild(button)
+    }
+})
+
 
 function main() {
     //THIS IS WHERE ALL THE CODE WILL GO TO START FUNCTIONS
     get_id()
 }
+get_rooms()
 main()

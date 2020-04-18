@@ -47,6 +47,8 @@ def create_room(data):
         join_room(id)
     else:
         emit("room_taken")
+        
+
 @socketio.on("send_name")
 def make_name(data):
     session["user"].set_name(data["send_data"])
