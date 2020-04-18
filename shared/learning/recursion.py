@@ -1,3 +1,4 @@
+import sys
 def tri_recursion(k):
     if k>0:
         result = k + tri_recursion(k-1)
@@ -7,4 +8,5 @@ def tri_recursion(k):
     return result
 
 print("recursion example")
-tri_recursion(500)
+tri_recursion(int(sys.argv[1]))
+
