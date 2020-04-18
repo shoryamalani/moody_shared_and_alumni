@@ -52,7 +52,7 @@ def get_id():
     id = random.randint(10000000,999999999)
     this_user = user(id)
     session["user"] = this_user
-    emit("send_id",{"id":id})
+    emit("set_id",{"id":id})
 
 
 if __name__ == '__main__':
