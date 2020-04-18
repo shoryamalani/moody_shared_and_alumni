@@ -26,6 +26,9 @@ def send_back(data):
         "data":data["data_sent"]
     },broadcast=True)
 
+@socket.io("create_room")
+def create_room(data):
+    name = data["data"]
 
 # This is for if we ever need ids. i accidentally made it not realizing we don't need it and can just use session.
 # @socketio.on('get_id')

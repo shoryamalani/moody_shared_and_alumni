@@ -20,6 +20,7 @@ function send_data() {
 
 function create_game() {
     game_name = prompt("What is the name of your game", "Blobs_game")
+    socket.emit("create_room", { "data": game_name })
 }
 
 // SOCKET HANDLERS
