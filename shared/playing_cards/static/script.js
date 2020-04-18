@@ -56,7 +56,7 @@ socket.on('room_taken', function() {
 })
 socket.on('get_rooms', function(data) {
     room_div = document.getElementById("rooms_div")
-    for (var x = 0; x >= data["rooms"].length; x++) {
+    for (var x = 0; x <= data["rooms"].length; x++) {
         button = document.createElement("button")
         button.textContent = data["rooms"][x]
         button.setAttribute("class", "pure-button")
