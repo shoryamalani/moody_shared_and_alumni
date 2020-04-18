@@ -21,6 +21,8 @@ class room:
         self.id = id
         self.users=[]
         self.users.append(first_user)
+rooms = []
+
 #ROUTERS
 @app.route('/')
 def index():
