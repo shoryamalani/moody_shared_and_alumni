@@ -20,6 +20,9 @@ class room:
     def __init__(self,first_user):
         self.users=[]
         self.users.append(first_user)
+    def add_member(self,id):
+        self.users.append(id)    
+    
 rooms = {"rooms":[]}
 
 #ROUTERS
@@ -44,10 +47,16 @@ def create_room(data):
         rooms["rooms"].append(name)
         rooms[room] = client_room
         emit("start_game",{"name":name})
-        join_room(id)
+        join_room(name)
     else:
         emit("room_taken")
-        
+
+@socketio.on("join_room")
+def joining_room(data):
+    room_to_join = rooms[data["name"]]
+    room_to_join.add_member(data["id"])
+    join_room(data["name"])
+    
 
 @socketio.on("send_name")
 def make_name(data):

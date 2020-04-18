@@ -33,6 +33,9 @@ function create_game() {
     socket.emit("create_room", { "data": game_name, "id": client["id"] })
 }
 
+function join_room(name) {
+    socket.emit("join_room", { "name": "room" })
+}
 // SOCKET HANDLERS
 // socket.on('send_data_back', function(data) {
 //     document.getElementById("receive").textContent = data["data"]
