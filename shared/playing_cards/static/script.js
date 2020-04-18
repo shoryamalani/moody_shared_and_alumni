@@ -40,7 +40,7 @@ socket.on("add_room", function(data) {
     button.textContent = data["name"]
     button.setAttribute("class", "pure-button")
     button.setAttribute("onclick", "join_room('" + data["name"] + "')")
-    room_div.append_child(button)
+    room_div.appendChild(button)
 
 })
 socket.on('set_id', function(data) {
