@@ -51,7 +51,7 @@ def create_room(data):
 
 @socketio.on("send_name")
 def make_name(data):
-    session["user"].set_name(data["data_send"])
+    session["user"].set_name(data["data_sent"])
 
 
 @socketio.on('get_id')
