@@ -64,7 +64,7 @@ def get_id():
 
 @socketio.on('get_rooms')
 def get_rooms():
-    emit('get_rooms',{"rooms",rooms})
+    emit('get_rooms',{"rooms",rooms["rooms"]})
     
 
 
