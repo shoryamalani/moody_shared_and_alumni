@@ -70,6 +70,7 @@ socket.on('get_rooms', function(data) {
 function main() {
     //THIS IS WHERE ALL THE CODE WILL GO TO START FUNCTIONS
     get_id()
+    get_rooms()
 }
-get_rooms()
+
 main()
