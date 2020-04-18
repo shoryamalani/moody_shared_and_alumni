@@ -16,7 +16,10 @@ class user:
         self.name = name 
 
 class room:
-    def __init__(self,)
+    def __init__(self,id,first_user):
+        self.id = id
+        self.users=[]
+        self.users.append(first_users)
 #ROUTERS
 @app.route('/')
 def index():
@@ -32,7 +35,7 @@ def send_back(data):
 @socket.io("create_room")
 def create_room(data):
     name = data["data"]
-    emit("add_room",{"name":name},)
+    emit("add_room",{"name":name},broadcast=True)
 
 # This is for if we ever need ids. i accidentally made it not realizing we don't need it and can just use session.
 # @socketio.on('get_id')
