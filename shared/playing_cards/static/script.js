@@ -47,6 +47,9 @@ socket.on("add_room", function(data) {
 socket.on('set_id', function(data) {
     client["id"] = data["id"]
 })
+socket.on('room_taken', function() {
+    alert("That room name is taken")
+})
 
 function main() {
     //THIS IS WHERE ALL THE CODE WILL GO TO START FUNCTIONS
