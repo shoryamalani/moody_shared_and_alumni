@@ -65,7 +65,7 @@ socket.on('get_rooms', function(data) {
         room_div.appendChild(button)
     }
 })
-socket.on('start_game', function(data) {
+socket.on('join_rooms', function(data) {
     document.getElementById("setup_rooms").hidden = true
     document.getElementById("pick_game").hidden = false
 })
