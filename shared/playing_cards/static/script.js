@@ -34,8 +34,14 @@ function create_game() {
 //     document.getElementById("receive").textContent = data["data"]
 // })
 
-socket.on("get_room", function(data) {
-    document.getElementById("")
+socket.on("add_room", function(data) {
+    room_div = document.getElementById("rooms_div")
+    button = document.createElement("button")
+    button.textContent = data["name"]
+    button.set_attribute("class", "pure-button")
+    button.set_attribute("onclick", "join_room('" + data["name"] + "')")
+    room_div.append_child(button)
+
 })
 socket.on('set_id', function(data) {
     client["id"] = data

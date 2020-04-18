@@ -27,11 +27,11 @@ def index():
     return render_template('index.html', async_mode=socketio.async_mode)
 
 #SOCKET HANDLERS
-@socketio.on('send_data')
-def send_back(data):
-    emit("send_data_back",{
-        "data":data["data_sent"]
-    },broadcast=True)
+# @socketio.on('send_data')
+# def send_back(data):
+#     emit("send_data_back",{
+#         "data":data["data_sent"]
+#     },broadcast=True)
 
 @socketio.on("create_room")
 def create_room(data):
