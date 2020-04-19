@@ -81,6 +81,7 @@ def choose_game(data):
 
 @socketio.on("send_name")
 def make_name(data):
+    session["name"] = data["data_sent"]
     session["user"].set_name(data["data_sent"])
 
 
