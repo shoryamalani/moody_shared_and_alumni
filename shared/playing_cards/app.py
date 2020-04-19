@@ -71,14 +71,15 @@ def joining_room(data):
     join_room(data["name"])
     session["room"] = room_to_join
     player_name = session.get("name") if session.get("name") else data["id"]
-    emit("new_player",{"name":player_name,"game":room_to_join.game},room=data["name"])
-    emit("join_game",{"players":room_to_join.users})
+    emit("new_player",{"name":player_name},room=data["name"])
+    emit("join_game",{"players":room_to_join.users,"game":room_to_join.game})
 
 @socketio.on("choose_game")
 def choose_game(data):
     room = session.get("room")
     room.initialize_game(data["game"])
-    
+    emit("pick_game",{"game":data["game"]},room=data["game_name"])
+
 
 @socketio.on("send_name")
 def make_name(data):

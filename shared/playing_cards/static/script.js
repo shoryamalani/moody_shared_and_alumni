@@ -31,16 +31,18 @@ function send_name() {
 function create_game() {
     game_name = prompt("What is the name of your game", "Blobs_game")
     socket.emit("create_room", { "data": game_name, "id": client["id"] })
+    client["game"] = game_name
 }
 
 function choose_game(game) {
     document.getElementById("pick_game").hidden = true
     document.getElementById("game_div").hidden = false
-    socket.emit("choose_game", { "game": game })
+    socket.emit("choose_game", { "game": game, "game_name": client["game"] })
 }
 
 function join_room(name) {
     socket.emit("join_room", { "name": name, "id": client["id"] })
+    client["game"] = name
 }
 
 
@@ -109,6 +111,7 @@ socket.on("join_game", function(data) {
         new_player.textContent = data["players"][x]
         players.append(new_player)
     }
+    document.getElementById("game_name").textContent = data["game"]
 })
 
 function main() {
