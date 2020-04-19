@@ -2,3 +2,10 @@ Button {
     padding: 10px;
     margin: 15px;
 }
+
+#players_div {
+    width: 500px;
+    margin: 50px;
+    float: right;
+    top: -40px;
+}

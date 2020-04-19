@@ -36,6 +36,14 @@ function create_game() {
 function join_room(name) {
     socket.emit("join_room", { "name": "room" })
 }
+
+function new_player(data) {
+    players = document.getElementById("players")
+    new_player = document.createElement("p")
+    new_player.textContent = data["name"]
+    players.append(new_player)
+    alert(new_player + "has joined.")
+}
 // SOCKET HANDLERS
 // socket.on('send_data_back', function(data) {
 //     document.getElementById("receive").textContent = data["data"]
