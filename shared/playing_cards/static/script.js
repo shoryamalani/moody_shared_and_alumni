@@ -43,17 +43,19 @@ function join_room(name) {
     socket.emit("join_room", { "name": name, "id": client["id"] })
 }
 
-function new_player(data) {
+
+// SOCKET HANDLERS
+// socket.on('send_data_back', function(data) {
+//     document.getElementById("receive").textContent = data["data"]
+// })
+
+socket.on('new_player', function(data) {
     players = document.getElementById("players")
     new_player = document.createElement("p")
     new_player.textContent = data["name"]
     players.append(new_player)
     alert(new_player + "has joined.")
-}
-// SOCKET HANDLERS
-// socket.on('send_data_back', function(data) {
-//     document.getElementById("receive").textContent = data["data"]
-// })
+})
 
 socket.on("add_room", function(data) {
     room_div = document.getElementById("rooms_div")
@@ -63,7 +65,6 @@ socket.on("add_room", function(data) {
     button.setAttribute("onclick", "join_room('" + data["name"] + "')")
     room_div.appendChild(document.createElement("BR"))
     room_div.appendChild(button)
-
 })
 socket.on('set_id', function(data) {
     client["id"] = data["id"]

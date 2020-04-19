@@ -51,7 +51,8 @@ def index():
 def create_room(data):
     name = data["data"]
     if name not in rooms["rooms"]:
-        client_room = room(data["id"])
+        player_name = session.get("name") if session.get("name") else data["id"]
+        client_room = room(player_name)
         session["room"] = client_room
         emit("add_room",{"name":name},broadcast=True)
         rooms["rooms"].append(name)
@@ -64,12 +65,13 @@ def create_room(data):
 @socketio.on("join_room")
 def joining_room(data):
     room_to_join = rooms[data["name"]]
-    room_to_join.add_member(data["id"])
+    name = session.get("name") if session.get("name") else data["id"]
+    room_to_join.add_member(name)
     join_room(data["name"])
     session["room"] = room_to_join
     player_name = session.get("name") if session.get("name") else data["id"]
     emit("new_player",{"name":player_name},room=data["name"])
-    emit("join_game")
+    emit("join_game",{"players",room_to_join.users},room=data["name"])
 
 @socketio.on("choose_game")
 def choose_game(data):
