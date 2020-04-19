@@ -1,7 +1,7 @@
 // GLOBALS
 const socket = io()
 var client = {
-
+    name = ""
 }
 
 //FUNCTIONS FOR FOR WORKING
@@ -50,16 +50,20 @@ function join_room(name) {
 // })
 
 socket.on('new_player', function(data) {
-    players = document.getElementById("players")
-    new_player = document.createElement("p")
-    new_player.textContent = data["name"]
-    players.append(new_player)
-    alert(data["name"] + "has joined.")
+    if (!(data["name"] == client["name"])) {
+        if (!(data["name"] == client["id"])) {
+            players = document.getElementById("players")
+            new_player = document.createElement("p")
+            new_player.textContent = data["name"]
+            players.append(new_player)
+            alert(data["name"] + "has joined.")
+        }
+    }
 })
 
 socket.on("add_room", function(data) {
-    room_div = document.getElementById("rooms_div")
-    button = document.createElement("button")
+    var room_div = document.getElementById("rooms_div")
+    var button = document.createElement("button")
     button.textContent = data["name"]
     button.setAttribute("class", "pure-button")
     button.setAttribute("onclick", "join_room('" + data["name"] + "')")
@@ -73,9 +77,9 @@ socket.on('room_taken', function() {
     alert("That room name is taken")
 })
 socket.on('get_rooms', function(data) {
-    room_div = document.getElementById("rooms_div")
+    var room_div = document.getElementById("rooms_div")
     for (var x = 0; x < data["rooms"].length; x++) {
-        button = document.createElement("button")
+        var button = document.createElement("button")
         button.textContent = data["rooms"][x]
         button.setAttribute("class", "pure-button")
         button.setAttribute("onclick", "join_room('" + data["rooms"][x] + "')")
@@ -86,14 +90,22 @@ socket.on('get_rooms', function(data) {
 socket.on('start_game', function(data) {
     document.getElementById("setup_rooms").hidden = true
     document.getElementById("pick_game").hidden = false
+    var players = document.getElementById("players")
+    var new_player = document.createElement("p")
+    var name = client["id"]
+    if (client["name"] != "") {
+        name = client["name"]
+    }
+    new_player.textContent = name
+    players.append(new_player)
 })
 
 socket.on("join_game", function(data) {
     document.getElementById("setup_rooms").hidden = true
     document.getElementById("game_div").hidden = false
-    players = document.getElementById("players")
+    var players = document.getElementById("players")
     for (var x = 0; x < data["players"].length; x += 1) {
-        new_player = document.createElement("p")
+        var new_player = document.createElement("p")
         new_player.textContent = data["players"][x]
         players.append(new_player)
     }
