@@ -56,7 +56,7 @@ socket.on('new_player', function(data) {
             new_player = document.createElement("p")
             new_player.textContent = data["name"]
             players.append(new_player)
-            alert(data["name"] + "has joined.")
+            alert(data["name"] + " has joined.")
         }
     }
 })

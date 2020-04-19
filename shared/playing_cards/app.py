@@ -20,6 +20,7 @@ class user:
         self.name = name 
 
 class room:
+    game = ""
     def __init__(self,first_user):
         self.users=[]
         self.users.append(first_user)
@@ -70,7 +71,7 @@ def joining_room(data):
     join_room(data["name"])
     session["room"] = room_to_join
     player_name = session.get("name") if session.get("name") else data["id"]
-    emit("new_player",{"name":player_name},room=data["name"])
+    emit("new_player",{"name":player_name,"game":room_to_join.game},room=data["name"])
     emit("join_game",{"players":room_to_join.users})
 
 @socketio.on("choose_game")

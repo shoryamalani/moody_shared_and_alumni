@@ -8,4 +8,5 @@ Button {
     margin: 50px;
     float: right;
     top: -40px;
+    border-left: 1px solid black;
 }
