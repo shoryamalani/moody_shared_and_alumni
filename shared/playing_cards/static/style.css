@@ -1,5 +1,5 @@
 Body {
-    background-color: green
+    background-color: lightgreen
 }
 
 Button {
@@ -7,7 +7,7 @@ Button {
     margin: 15px;
 }
 
-#players_div {
+#players {
     width: 200px;
     margin: 50px;
     float: right;
