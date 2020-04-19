@@ -12,6 +12,7 @@ app.config['SECRET_KEY'] = 'secret!'
 async_mode = None
 socketio = SocketIO(app, async_mode=async_mode)
 
+#Classes
 class user:
     def __init__(self,id):
         self.user_id = id
@@ -31,6 +32,7 @@ class room:
         elif game == "blackjack":
             pass#set up blackjack things
     
+#Globals
 rooms = {"rooms":[]}
 
 #ROUTERS
