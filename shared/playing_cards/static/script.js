@@ -63,6 +63,11 @@ socket.on('new_player', function(data) {
     }
 })
 
+socket.on("pick_game", function(data) {
+    document.getElementById(data["game"]).hidden = false
+    document.getElementById("game_name").textContent = data["game"]
+})
+
 socket.on("add_room", function(data) {
     var room_div = document.getElementById("rooms_div")
     var button = document.createElement("button")
@@ -112,6 +117,7 @@ socket.on("join_game", function(data) {
         players.append(new_player)
     }
     document.getElementById("game_name").textContent = data["game"]
+    document.getElementById(data["game"]).hidden = false
 })
 
 function main() {
