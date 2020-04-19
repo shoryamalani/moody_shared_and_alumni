@@ -2,6 +2,8 @@
 import random
 from flask import Flask,render_template,jsonify,session
 from flask_socketio import SocketIO,emit,join_room,leave_room,send
+import james_bond
+import blackjack
 #https://flask-socketio.readthedocs.io/en/latest/
 
 #APP STUFF
@@ -21,7 +23,13 @@ class room:
         self.users=[]
         self.users.append(first_user)
     def add_member(self,id):
-        self.users.append(id)    
+        self.users.append(id)
+    def initialize_game(self,game):
+        self.game = game
+        if game == "james_bond":
+            pass
+        elif game == "blackjack":
+            pass#set up blackjack things
     
 rooms = {"rooms":[]}
 
@@ -56,9 +64,15 @@ def joining_room(data):
     room_to_join = rooms[data["name"]]
     room_to_join.add_member(data["id"])
     join_room(data["name"])
+    session["room"] = room_to_join
     player_name = session.get("name") if session.get("name") else data["id"]
     emit("new_player",{"name":player_name},room=data["name"])
     emit("join_game")
+
+@socketio.on("choose_game")
+def choose_game(data):
+    room = session.get("room")
+    room.intialize_game(data["game"])
     
 
 @socketio.on("send_name")

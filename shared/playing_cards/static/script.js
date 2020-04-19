@@ -33,6 +33,12 @@ function create_game() {
     socket.emit("create_room", { "data": game_name, "id": client["id"] })
 }
 
+function choose_game(game) {
+    document.getElementById("pick_game").hidden = true
+    document.getElementById("game_div").hidden = false
+    socket.emit("choose_game", { "game": game })
+}
+
 function join_room(name) {
     socket.emit("join_room", { "name": "room" })
 }
