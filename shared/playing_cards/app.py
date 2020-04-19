@@ -74,7 +74,7 @@ def joining_room(data):
 @socketio.on("choose_game")
 def choose_game(data):
     room = session.get("room")
-    room.intialize_game(data["game"])
+    room.initialize_game(data["game"])
     
 
 @socketio.on("send_name")
