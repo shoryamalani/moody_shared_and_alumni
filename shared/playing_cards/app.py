@@ -56,7 +56,7 @@ def joining_room(data):
     room_to_join = rooms[data["name"]]
     room_to_join.add_member(data["id"])
     join_room(data["name"])
-    player_name = if session.get("name") else data["id"]
+    player_name = session.get("name") if session.get("name") else data["id"]
     emit("new_player",{"name":player_name},room=data["name"])
     emit("join_game")
     
