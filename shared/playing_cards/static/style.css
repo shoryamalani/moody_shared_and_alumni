@@ -8,6 +8,10 @@ Button {
     margin: 15px;
 }
 
+input {
+    color: black
+}
+
 #players {
     width: 200px;
     margin: 50px;
