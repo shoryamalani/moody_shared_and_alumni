@@ -117,7 +117,9 @@ socket.on("join_game", function(data) {
         players.append(new_player)
     }
     document.getElementById("game_name").textContent = data["game"]
-    document.getElementById(data["game"]).hidden = false
+    if (data["game"] != "") {
+        document.getElementById(data["game"]).hidden = false
+    }
 })
 
 function main() {
