@@ -1,7 +1,7 @@
 // GLOBALS
 const socket = io()
 var client = {
-    name = ""
+    name: ""
 }
 
 //FUNCTIONS FOR FOR WORKING
