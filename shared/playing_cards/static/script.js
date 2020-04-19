@@ -40,7 +40,7 @@ function choose_game(game) {
 }
 
 function join_room(name) {
-    socket.emit("join_room", { "name": name })
+    socket.emit("join_room", { "name": name, "id": client["id"] })
 }
 
 function new_player(data) {
