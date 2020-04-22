@@ -8,6 +8,3 @@ def start_game(players):
     pass
 
 
-
-if __name__ == "__main__":
-    main()
