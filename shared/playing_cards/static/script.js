@@ -122,6 +122,15 @@ socket.on("join_game", function(data) {
     }
 })
 
+
+// THIS IS WHERE WE HAVE THE JAMES BOND FUNCTIONS
+
+function james_interpreter(data) {
+    if (data["action"] == "start_game") {
+        console.log("")
+    }
+}
+
 function main() {
     //THIS IS WHERE ALL THE CODE WILL GO TO START FUNCTIONS
     get_id()
