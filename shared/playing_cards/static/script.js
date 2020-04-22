@@ -64,7 +64,9 @@ socket.on('new_player', function(data) {
 })
 
 socket.on("pick_game", function(data) {
-    document.getElementById(data["game"]).hidden = false
+    var file_name = data["game"] + ".html"
+    $("#inner_game_div").load(file_name)
+        // document.getElementById(data["game"]).hidden = false
     document.getElementById("game_name").textContent = data["game"]
 })
 
