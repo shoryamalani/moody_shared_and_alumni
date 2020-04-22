@@ -1,24 +1,22 @@
 import json
 import smtplib
-from email.mime.text import MIMEtext
+from email.mime.text import MIMEText
 
-
-mail = smtplib.SMTP('smtp.gmail.com',587)
+mail = smtplib.SMTP("smtp.gmail.com",587)
 mail.ehlo()
 mail.starttls()
-with open("emailcreds.json","r") as f:
-    creds =json.load(f)
-    
-mail.login(creds["email"],creds["passwords"])
+with open("creds.json","r") as f:
+	creds = json.load(f)
+mail.login(creds["email"],creds["pass"])
+message = "What would you like to say: "
+msg = MIMEText(message)
+sender = creds["email"]
+recipients = [creds["email"]]
+msg["Subject"] = "testing smtplib"
+msg["From"] = sender
+msg["To"] = ", ".join(recipients)
 
-msg = MIMEText(to_send)
-sender = 'shoryamal@gmail.com'
-recipients = ['shoryamal@gmail.com','smalani@gmail.com','sarika.malani@gmail.com']
-msg['Subject'] = "soccer game"
-msg['From'] = sender
-msg['To'] = ", ".join(recipients)
-
-# mail.sendmail(sender,recipients,message.encode('utf-8'))
 result = mail.sendmail(sender,recipients,msg.as_string())
 mail.quit()
 print(result)
+
