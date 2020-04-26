@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <title>AKULIAN TRANSLATOR</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+</head>
+<!-- 
+integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" -->
+
+<body>
+    <div>
+        <button id="akul_button" onclick="i_am_akul()">I AM AKUL</button>
+        <div id="akul_div" hidden=true>
+            <input id="i_am_akul">
+            <button id="submit_akul" onclick="akul_speaks()">SPEAK TO THOSE BENEATH YOU</button>
+        </div>
+        <div id="akul_output">
+            <p id="akul_raw_text"></p>
+            <p id="akul_translated"></p>
+        </div>
+    </div>
+</body>
+<script src="../static/script.js "></script>
