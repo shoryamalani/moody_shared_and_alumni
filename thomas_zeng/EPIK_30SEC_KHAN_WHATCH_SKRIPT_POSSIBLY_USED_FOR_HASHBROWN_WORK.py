@@ -44,9 +44,6 @@ def p():
         time.sleep(4)
         pyautogui.click(1460,475)
 
-i = 1
-
-while i == 1:
 #Example code:
 
 #s() <-- this is for a short video
@@ -56,9 +53,7 @@ while i == 1:
 #p() <-- this is to move to the next page
 
 #make sure to indent btw
-#paste or type the functions in the gap below
+#put the functions in the gap below
 
 
         
-#ignore i = 3
-    i = 3
