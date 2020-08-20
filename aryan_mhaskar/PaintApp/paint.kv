@@ -1,0 +1,38 @@
+<Button>
+    color: 1, 1, 1, 1
+
+<PaintWindow>
+    size: 100, 100
+
+<ParentWindow>
+    background_color: 1, 1, 1, 1
+    GridLayout:
+        size: root.width, root.height
+        rows: 2
+        PaintWindow:
+            pos_hint: {"top": 1}
+        GridLayout:
+            pos_hint: {"bottom":1}
+            cols: 2
+            rows: 2
+            Button:
+                background_color: 1, 0, 0, 1
+                text: "Red"
+                pos_hint: {"top":1, "right":1}
+                on_press: root.btn()
+            Button:
+                background_color: 0, 1, 0, 1
+                text: "Green"
+                pos_hint: {"top":1, "left":1}
+                on_press: root.btn2()
+            Button:
+                background_color: 0, 0, 1, 1
+                text: "Blue"
+                pos_hint:{"bottom":1, "right":1}
+                on_press: root.btn3()
+            Button:
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                text: "White"
+                pos_hint:{"bottom":1, "left":1}
+                on_press: root.btn4()
