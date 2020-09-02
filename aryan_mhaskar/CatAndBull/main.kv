@@ -1,0 +1,216 @@
+
+<TheManager>:
+    id: screen_manager
+
+    eguess:eguess
+    hguess:hguess
+    easylabel:easylabel
+    hardlabel:hardlabel
+    score:score
+
+    Screen:
+        name: 'MainScreen'
+        GridLayout:
+            rows: 2
+            Label:
+                text: "Cat and Bull"
+                font_size: 100
+            GridLayout:
+                cols: 3
+                Button:
+                    text: "Play"
+                    background_color: (0, 0, 1, 1)
+                    color: (1, 1, 1, 1)
+                    font_size: 30
+                    on_press: screen_manager.current='level'
+                Button:
+                    text: "How To Play"
+                    background_color: (1, 0, 1, 1)
+                    color: (1, 1, 1, 1)
+                    font_size: 30
+                    on_press: screen_manager.current='How'
+                Button:
+                    text: "Upcoming"
+                    background_color: (1, 0, 0, 1)
+                    color: (1, 1, 1, 1)
+                    font_size: 30
+                    on_press: screen_manager.current='upcoming'
+    
+    Screen:
+        name: 'upcoming'
+        GridLayout:
+            rows: 5
+            Button:
+                text: "Created By: Aryan Mhaskar"
+            Button:
+                text: 'Version 1.1: User Suggestions Feature'
+            Button:
+                text: "Version 1.2: Leaderboard when connected to internet"
+            Button:
+                text: 'Version 2.0: New Features 👀'
+            Button:
+                text: 'Back'
+                background_color: (0, 0, 1, 1)
+                color: (1, 1, 1, 1)
+                font_size: 30
+                on_press: screen_manager.current='MainScreen'
+                on_press: root.clear()
+                
+    Screen:
+        name: 'How'
+        GridLayout:
+            rows: 10
+            cols: 1
+            Button:
+                text: 'Cat and Bull is a simple puzzle game where you must discover a hidden unique set of numbers (easy-4 digits) (hard- 6)'
+            Button:
+                text: 'When you enter an initial guess (attempt) you will be told numbers of cat and bull'
+            Button:
+                text: 'A "cat" means that a digit of your attempt is in the answer, however, it is in the wrong location.'
+            Button:
+                text: 'A "bull" means that a digit of your attempt is in the answer, and in the correct location.'
+            Button:
+                text: 'For example, if you attempt "4317" and the answer is "3427"- you would receive 2 cat and one bull'
+            Button:
+                text: 'This is because two of digits are contained within the answer, but in the wrong location,'
+            Button:
+                text: 'and because one digit is in the correct place and location'
+            Button:
+                text: 'The goal of the game is deduce the answer using the given info in as few attempts as possible'
+            Button:
+                text: 'REMEMBER, THE LOWER THE SCORE THE BETTER'
+            Button:
+                text: 'Back'
+                background_color: (0, 0, 1, 1)
+                color: (1, 1, 1, 1)
+                font_size: 30
+                on_press: screen_manager.current='MainScreen'
+                on_press: root.clear()
+                
+    Screen:
+        name: 'level'
+        GridLayout:
+            rows: 2
+            Label:
+                text: "Choose Level"
+                font_size: 80
+            GridLayout:
+                cols: 3
+                Button:
+                    text: "Easy: 4 Digit Puzzle"
+                    font_size: 30
+                    color: (1, 1, 1, 1)
+                    background_color: (0, 1, 0, 1)
+                    on_press: root.easy()
+                    on_press: screen_manager.current='easy'
+                Button:
+                    text: "Hard: 6 Digit Puzzle"
+                    font_size: 30
+                    color: (1, 1, 1, 1)
+                    background_color: (1, 0, 0, 1)
+                    on_press: root.hard()
+                    on_press: screen_manager.current='hard'
+                Button:
+                    text: 'Back'
+                    background_color: (0, 0, 1, 1)
+                    color: (1, 1, 1, 1)
+                    font_size: 30
+                    on_press: screen_manager.current='MainScreen'
+                    on_press: root.clear()
+
+    Screen:
+        name: 'easy'
+        GridLayout:
+            cols: 2
+            GridLayout:
+                rows: 3
+                EasyInput:
+                    input_filter: 'int'
+                    hint_text: 'Enter'
+                    id: eguess
+                    multiline: False
+                    size: (200, 100)
+                    text_size: self.size
+                    font_size: 175
+                Button:
+                    text: 'Submit'
+                    background_color: (0, 1, 0, 1)
+                    color: (1, 1, 1, 1)
+                    font_size: 30
+                    on_press: root.easyguess()
+                Button:
+                    text: "Back"
+                    background_color: (0, 0, 1, 1)
+                    color: (1, 1, 1, 1)
+                    font_size: 30
+                    on_press: root.clear()
+                    on_press: screen_manager.current='level'
+            GridLayout:
+                rows: 1
+                Label:
+                    text_size: self.size
+                    font_size: 20
+                    halign: 'center'
+                    valign: 'top'
+                    id: easylabel
+                    multiline: True
+                    text: "Your Attempt Results"
+
+    Screen:
+        name: 'hard'
+        GridLayout:
+            cols: 2
+            GridLayout:
+                rows: 3
+                HardInput:
+                    input_filter: 'int'
+                    id: hguess
+                    hint_text: 'Enter'
+                    multiline: False
+                    size: (200, 100)
+                    text_size: self.size
+                    font_size: 110
+                Button:
+                    text: 'Submit'
+                    background_color: (0, 1, 0, 1)
+                    color: (1, 1, 1, 1)
+                    font_size: 30
+                    on_press: root.hardguess()
+                Button:
+                    text: "Back"
+                    background_color: (0, 0, 1, 1)
+                    color: (1, 1, 1, 1)
+                    font_size: 30
+                    on_press: root.clear()
+                    on_press: screen_manager.current='level'
+            GridLayout:
+                rows: 1
+                Label:
+                    text_size: self.size
+                    font_size: 20
+                    halign: 'center'
+                    valign: 'top'
+                    id: hardlabel
+                    multiline: True
+                    text: "Your Attempt Results"
+
+    WinScreen:
+        name: 'win'
+        GridLayout:
+            rows: 2
+            Button: 
+                id: score
+                background_color: (1, 0, 1, 1)
+                color: (1, 1, 1, 1)
+                multiline: True
+                text: "SOLVED\nscore: "
+                font_size: 100
+            GridLayout: 
+                cols: 1
+                Button:
+                    text: "Home Screen"
+                    background_color: (0, 0, 1, 1)
+                    color: (1, 1, 1, 1)
+                    font_size: 30
+                    on_press: screen_manager.current='MainScreen'
+                    on_press: root.clear()
