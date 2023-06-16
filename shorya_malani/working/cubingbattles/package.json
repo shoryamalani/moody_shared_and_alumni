@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cube-preview": "^0.3.1",
+    "cube-preview": "^0.4.3",
     "cube-scrambler": "^1.1.0",
     "express": "^4.17.1",
     "scramble-generator": "^0.2.2",
